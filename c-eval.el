@@ -129,7 +129,7 @@
              (let ((value (plist-get plist part)))
                (if value (insert value)
                  (error "Template does not have %S" part))))
-            (t (error "Bad template part something %S" part))))
+            (t (error "Bad template part: %S" part))))
     (c-eval-buffer)))
 
 (defvar c-eval-type-to-printf-alist
