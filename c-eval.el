@@ -64,6 +64,13 @@
     "  return EXIT_SUCCESS;" "\n"
     "}" "\n"))
 
+(defvar c-eval-type-to-printf-alist
+  '(("int" . "d")
+    ("long" . "l")
+    ("long long" . "ll")
+    ("char *" . "s")
+    ("uintptr_t" . "\" PRIdPTR \"")))
+
 ;;;###autoload
 (defun c-eval-scratch ()
   "Create or select the *c-eval-scratch* buffer."
@@ -131,13 +138,6 @@
                  (error "Template does not have %S" part))))
             (t (error "Bad template part: %S" part))))
     (c-eval-buffer)))
-
-(defvar c-eval-type-to-printf-alist
-  '(("int" . "d")
-    ("long" . "l")
-    ("long long" . "ll")
-    ("char *" . "s")
-    ("uintptr_t" . "\" PRIdPTR \"")))
 
 ;;;###autoload
 (defun c-eval-expression (type expression)
