@@ -68,6 +68,7 @@
     ("long" . "l")
     ("long long" . "ll")
     ("char *" . "s")
+    ("intptr_t"  . "\" PRIdPTR \"")
     ("uintptr_t" . "\" PRIuPTR \"")))
 
 ;;;###autoload
