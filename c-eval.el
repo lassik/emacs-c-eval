@@ -60,6 +60,7 @@
     "  return EXIT_SUCCESS;" "\n"
     "}" "\n"))
 
+;;;###autoload
 (defun c-eval-scratch ()
   "Create or select the *c-eval-scratch* buffer."
   (interactive)
@@ -101,11 +102,13 @@
                                                    (concat default-directory
                                                            "c-eval"))))))))))
 
+;;;###autoload
 (defun c-eval-region (start end)
   "Compile and run text between START and END as C program."
   (interactive "r")
   (c-eval--raw-string (buffer-substring-no-properties start end)))
 
+;;;###autoload
 (defun c-eval-buffer ()
   "Compile and run accessible portion of buffer as C program."
   (interactive)
@@ -132,6 +135,7 @@
     ("char *" . "s")
     ("uintptr_t" . "\" PRIdPTR \"")))
 
+;;;###autoload
 (defun c-eval-expression (type expression)
   "Compile and run C program that outputs the TYPE result of EXPRESSION."
   (interactive
@@ -148,6 +152,7 @@
                       'directive directive
                       'expression expression)))
 
+;;;###autoload
 (defun c-eval-sizeof (type)
   "Compile and run C program that outputs sizeof(TYPE)."
   (interactive "sC eval sizeof: ")
