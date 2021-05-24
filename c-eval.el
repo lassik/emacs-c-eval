@@ -68,7 +68,7 @@
     ("long" . "l")
     ("long long" . "ll")
     ("char *" . "s")
-    ("uintptr_t" . "\" PRIdPTR \"")))
+    ("uintptr_t" . "\" PRIuPTR \"")))
 
 ;;;###autoload
 (defun c-eval-scratch ()
