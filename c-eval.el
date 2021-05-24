@@ -68,7 +68,9 @@
     ("long" . "l")
     ("long long" . "ll")
     ("char *" . "s")
+    ("intmax_t"  . "\" PRIdMAX \"")
     ("intptr_t"  . "\" PRIdPTR \"")
+    ("uintmax_t" . "\" PRIuMAX \"")
     ("uintptr_t" . "\" PRIuPTR \"")))
 
 ;;;###autoload
