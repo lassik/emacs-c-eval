@@ -143,12 +143,12 @@
 (defun c-eval-expression (type expression)
   "Compile and run C program that outputs the TYPE result of EXPRESSION."
   (interactive
-   (let* ((type
-           (completing-read "C expression result type: "
-                            c-eval-type-to-printf-alist))
-          (expression
-           (read-string "C expression: " nil 'c-eval-expression-history)))
-     (list type expression)))
+   (let ((type (completing-read "C expression result type: "
+                                c-eval-type-to-printf-alist nil t)))
+     (if (equal "" type) (error "No type given")
+         (list type
+               (read-string "C expression: " nil
+                            'c-eval-expression-history)))))
   (let ((directive
          (or (cdr (assoc type c-eval-type-to-printf-alist))
              (error "No known printf() directive for type %S" type))))
