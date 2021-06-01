@@ -89,8 +89,7 @@
            (or (and c-eval-temp-directory
                     (expand-file-name c-eval-temp-directory))
                (let ((tmp (getenv "TMPDIR")))
-                 (and (not (null tmp))
-                      (not (equal "" tmp))
+                 (and (not (equal "" tmp))
                       tmp))
                default-directory))))
     (with-temp-buffer
