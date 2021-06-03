@@ -80,6 +80,9 @@
   (switch-to-buffer (get-buffer-create "*c-eval-scratch*"))
   (unless (eq 'c-mode major-mode)
     (c-mode))
+  (when (= 0 (buffer-size))
+    (dolist (line c-eval-prelude)
+      (insert line "\n")))
   (current-buffer))
 
 (defun c-eval--raw-string (string)
