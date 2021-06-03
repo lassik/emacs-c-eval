@@ -64,12 +64,12 @@
     "}" "\n"))
 
 (defvar c-eval-type-to-printf-alist
-  '(("int" . "d")
-    ("long" . "ld")
-    ("long long" . "lld")
-    ("char *" . "s")
+  '(("char *" . "s")
+    ("int" . "d")
     ("intmax_t"  . "\" PRIdMAX \"")
     ("intptr_t"  . "\" PRIdPTR \"")
+    ("long long" . "lld")
+    ("long" . "ld")
     ("uintmax_t" . "\" PRIuMAX \"")
     ("uintptr_t" . "\" PRIuPTR \"")))
 
