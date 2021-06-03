@@ -65,8 +65,8 @@
 
 (defvar c-eval-type-to-printf-alist
   '(("int" . "d")
-    ("long" . "l")
-    ("long long" . "ll")
+    ("long" . "ld")
+    ("long long" . "lld")
     ("char *" . "s")
     ("intmax_t"  . "\" PRIdMAX \"")
     ("intptr_t"  . "\" PRIdPTR \"")
