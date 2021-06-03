@@ -71,7 +71,10 @@
     ("long long" . "lld")
     ("long" . "ld")
     ("uintmax_t" . "\" PRIuMAX \"")
-    ("uintptr_t" . "\" PRIuPTR \"")))
+    ("uintptr_t" . "\" PRIuPTR \"")
+    ("unsigned int" . "u")
+    ("unsigned long long" . "llu")
+    ("unsigned long" . "lu")))
 
 ;;;###autoload
 (defun c-eval-scratch ()
