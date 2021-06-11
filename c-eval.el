@@ -103,6 +103,9 @@
       (write-region (point-min) (point-max) (concat tmpdir "c-eval.c")))
     (with-current-buffer (get-buffer-create "*c-eval-output*")
       (display-buffer (current-buffer))
+      (with-current-buffer-window (current-buffer) nil nil
+        ;; Scroll window to the end to ensure output is visible.
+        (goto-char (point-max)))
       (setq default-directory tmpdir)
       (let ((p
              (start-process "c-eval"
